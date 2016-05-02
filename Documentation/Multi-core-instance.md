@@ -1,4 +1,4 @@
-# Multi-core / multi-instance
+# Multi-core / Multi-instance
 
 This page describes how to configure SolrNet to access (read/write) multiple [Solr cores](http://wiki.apache.org/solr/CoreAdmin) or instances. It assumes you know what Solr cores are, how to configure and use them outside of SolrNet. This page doesn't cover [CoreAdminHandler](http://wiki.apache.org/solr/CoreAdmin#CoreAdminHandler) commands.
 
@@ -22,6 +22,15 @@ solrPerson.Commit();
 ```
 
 ### With Windsor facility
+To use CastleWindsor you need to reference Castle.Facilities.SolrNetIntegration as well as CastleWinsor. 
+
+Please include a reference to the following libraries:
+* Castle.Core.dll
+* Castle.Facilities.SolrNetIntegration.dll
+* Castle.Windsor.dll 
+
+_Note: SolrNet comes with a version of Castle, but alternatively you can download from NuGet but being mindful that there might be a point that a breaking change might occur._
+
 Code config:
 
 ```C#
